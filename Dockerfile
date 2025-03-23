@@ -16,6 +16,8 @@ COPY --from=cacher /app/target target
 COPY --from=cacher $CARGO_HOME $CARGO_HOME
 RUN cargo build --release
 
+FROM debian:stable-slim AS build-env
+
 FROM gcr.io/distroless/cc-debian12:nonroot
 WORKDIR /app
 COPY --from=builder /app/target/release/main /app
