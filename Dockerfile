@@ -14,10 +14,7 @@ FROM chef AS builder
 COPY . .
 COPY --from=cacher /app/target target
 COPY --from=cacher $CARGO_HOME $CARGO_HOME
-ENV SQLX_OFFLINE=true
 RUN cargo build --release
-
-FROM debian:stable-slim AS build-env
 
 FROM gcr.io/distroless/cc-debian12:nonroot
 WORKDIR /app

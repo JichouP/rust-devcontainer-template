@@ -27,10 +27,6 @@ alias = "test"
 description = "Run tests"
 dependencies = ["_test", "_rm_coverage_dir", "_grcov_html", "_grcov_lcov"]
 
-[tasks.tbls]
-description = "Run tbls doc"
-dependencies = ["_tbls_clean", "_tbls_gen"]
-
 [tasks.d]
 alias = "doc"
 
@@ -84,13 +80,3 @@ args = [
     "-o",
     "./target/coverage.lcov",
 ]
-
-[tasks._tbls_clean]
-description = "Remove doc/schema directory"
-command = "rm"
-args = ["-rf", "doc/schema"]
-
-[tasks._tbls_gen]
-description = "Generate doc/schema"
-command = "tbls"
-args = ["doc"]

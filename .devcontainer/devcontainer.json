@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/rust-postgres
+// README at: https://github.com/devcontainers/templates/tree/main/src/rust
 {
-	"name": "Rust and PostgreSQL",
+	"name": "Rust",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -23,7 +23,6 @@
 			"extensions": [
 				"ms-azuretools.vscode-docker",
 				"rust-lang.rust-analyzer",
-				"dineug.vuerd-vscode",
 				"shd101wyy.markdown-preview-enhanced",
 				"eamodio.gitlens",
 				"ryanluker.vscode-coverage-gutters",
